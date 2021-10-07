@@ -3,6 +3,8 @@
 #include <utility> // swap()
 #include <string>
 
+#define SIZE 10
+
 template<typename E>
 void sort(E* container, int size) {
 
@@ -30,21 +32,21 @@ int main() {
 	// e entao ordena a lista em ordem alfabetica
 	srand (time(NULL));
 
-	Pessoa container[10];
-	for (int i=0; i<10; i++) {
+	Pessoa container[SIZE];
+	for (int i=0; i<SIZE; i++) {
 		string initial = "";
 		char c = ('A' + rand()%26);
 		char d = ('a' + rand()%26);
 		initial += c;
 		initial += d;
 		container[i].set_nome(initial);
-		cout << container[i].toString() << endl;
+		//cout << container[i].toString() << endl;
 	}
 
-	sort(container, 10);
+	sort(container, SIZE);
 
 	// mostrando elementos adicionados
-   for(int i = 0; i < 10; i++){
+   for(int i = 0; i < SIZE; i++){
       cout << "vetor[" << i << "] = " << container[i].toString() << endl;
    }
 
